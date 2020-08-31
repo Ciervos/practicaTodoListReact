@@ -1,14 +1,20 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
-import Todolistsincall from './components/todolistsincall/index';
+import React from "react";
+import Tasks from "./components/todolistcall/Task/index";
+import AddTask from "./components/todolistcall/AddTask/AddTask";
 
-function App() {
-  return (
-<div>
-  <Todolistsincall/>
-  </div>
-  );
+class App extends React.Component {
+handleCall(){
+  console.log("hello")
+}
+
+  render() {
+    return (
+      <>
+        <AddTask propDePrueba={()=> this.handleCall()}/>
+        <Tasks />
+      </>
+    );
+  }
 }
 
 export default App;
