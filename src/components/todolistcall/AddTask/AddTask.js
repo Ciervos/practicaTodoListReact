@@ -19,7 +19,7 @@ class AddTask extends React.Component {
   handleClick() {
     const { inputValue } = this.state;
     if (inputValue !== "") {
-      this.props.propDePrueba();
+      this.props.propDePrueba(inputValue);
     }
   }
 

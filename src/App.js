@@ -3,15 +3,26 @@ import Tasks from "./components/todolistcall/Task/index";
 import AddTask from "./components/todolistcall/AddTask/AddTask";
 
 class App extends React.Component {
-handleCall(){
-  console.log("hello")
+  constructor(props){
+  super(props)
+
+   this.state = {
+     tasks: []
+   };
+  }
+handleCall(inputValue){
+  const {tasks} = this.state;
+  this.setState({
+    tasks: [...tasks, inputValue]
+  });
 }
 
   render() {
+    const {tasks} = this.state;
     return (
       <>
-        <AddTask propDePrueba={()=> this.handleCall()}/>
-        <Tasks />
+        <AddTask propDePrueba={(inputValue)=> this.handleCall(inputValue)}/>
+        <Tasks tasks={tasks}/>
       </>
     );
   }
