@@ -1,17 +1,18 @@
 import React from "react";
-import Task from "../Task/index";
+import Task from "../UniqueTask/index";
 
 class Tasks extends React.Component {
   render() {
+    console.log(2323, this.props);
     const { tasks } = this.props;
-    console.log(tasks);
+
     return (
       <>
-      <ul className="taskContainer">
-        {[].map((name, key) => {
-          return <Task name={name} key={key} />
-        })}
-      </ul>
+        <ul className="taskContainer">
+          {tasks.map((name, key) => {
+            return <Task name={name} key={key} />;
+          })}
+        </ul>
       </>
     );
   }
