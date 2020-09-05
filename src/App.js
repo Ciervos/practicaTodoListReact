@@ -29,19 +29,34 @@ function App() {
   }
 
   function handleCompleted(info){
-  
-  let prueba = {...tasks.map((task, key) => {
-    if(key == info){
-   return(
-     task.isCompleted = !task.isCompleted
-   ) 
-    }
-  })}
+
+  let modifiedTasks = tasks.map((task) => {
+    if (task.value == tasks[info].value) {
+        return {
+          value: task.value,
+          isCompleted: !task.isCompleted
+        };
+      }
+
+     return task;
+    });
+
+    setTasks(modifiedTasks);
+
+
+// Primera forma resuelta, no es la ideal
+
+//    {tasks.map((task, key) => {
+//     if(key == info){
+//    return(
+//      task.isCompleted = !task.isCompleted
+//    ) 
+//     }
+//   })}
  
-  console.log(prueba)
-  console.log(tasks)
+
   
-setTasks([...tasks]);
+// setTasks([...tasks]);
    
   }
 

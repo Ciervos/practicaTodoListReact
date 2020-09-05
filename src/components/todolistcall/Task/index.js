@@ -3,8 +3,9 @@ import React from "react";
 function Task(props) {
   
   function handleClick() {
-    if (props.handleSecondCb) {
-      props.handleSecondCb(props.id);
+    const {id,handleSecondCb} = props;
+    if (handleSecondCb) {
+    handleSecondCb(id);
     }
   }
 
